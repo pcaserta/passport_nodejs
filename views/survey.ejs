@@ -1,0 +1,34 @@
+<form action="/submit" method="POST">
+  <div class="form-group p-3">
+    <p class="lead mb-3" id="leggo" name="email"><%= email %></p>
+    <label for="exampleInputEmail1">Question 1</label>
+    <input
+      name="q1"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="type here"
+    />
+  </div>
+  <div class="form-group p-3">
+    <label for="exampleInputPassword1">Question 2</label>
+    <input
+      name="q2"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="type here"
+    />
+  </div>
+
+  <div class="form-group p-3">
+    <label for="exampleInputPassword1">Question 3</label>
+    <input
+      name="q3"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="type here"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary m-3">Submit</button>
+</form>

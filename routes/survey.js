@@ -1,24 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const mysql = require("mysql");
-const { ensureAuthenticated } = require("../config/auth");
-
-//Welcome page
-router.get("/", (req, res) => res.render("welcome"));
-
-//Dashboard
-router.get("/dashboard", ensureAuthenticated, (req, res) =>
-  res.render("dashboard", {
-    name: req.user.name,
-    email: req.user.email
-  })
-);
-
-router.get("/survey", ensureAuthenticated, (req, res) =>
-  res.render("survey", {
-    email: req.user.email
-  })
-);
 
 const pool = mysql.createPool({
   connectionLimit: 10,
@@ -33,8 +15,8 @@ function getConnection() {
 }
 
 router.post("/submit", (req, res) => {
-  console.log("trying to add survey to db");
-  const email = req.user.email;
+  console.log("trying to add user to db");
+  const email = req.body.eamil;
   const q1 = req.body.q1;
   const q2 = req.body.q2;
   const q3 = req.body.q3;
