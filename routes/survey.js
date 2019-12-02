@@ -16,7 +16,7 @@ function getConnection() {
 
 router.post("/submit", (req, res) => {
   console.log("trying to add user to db");
-  const email = req.body.eamil;
+  const email = req.body.email;
   const q1 = req.body.q1;
   const q2 = req.body.q2;
   const q3 = req.body.q3;
