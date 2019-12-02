@@ -50,10 +50,7 @@ router.post("/submit", (req, res) => {
       res.end();
     }
   );
-  res.render("dashboard", {
-    name: req.user.name,
-    email: req.user.email
-  });
+  res.redirect("/dashboard");
   res.end();
 });
 
