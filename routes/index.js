@@ -14,11 +14,7 @@ router.get("/dashboard", ensureAuthenticated, (req, res) =>
   })
 );
 
-router.get("/survey", ensureAuthenticated, (req, res) =>
-  res.render("survey", {
-    email: req.user.email
-  })
-);
+router.get("/survey", ensureAuthenticated, (req, res) => res.render("survey"));
 
 const pool = mysql.createPool({
   connectionLimit: 10,
@@ -54,7 +50,10 @@ router.post("/submit", (req, res) => {
       res.end();
     }
   );
-
+  res.render("dashboard", {
+    name: req.user.name,
+    email: req.user.email
+  });
   res.end();
 });
 

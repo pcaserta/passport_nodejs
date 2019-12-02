@@ -32,7 +32,7 @@ router.post("/submit", (req, res) => {
         res.sendStatus(500);
         return;
       }
-      console.log("Inserted a new survey with id ", results.insertId);
+      console.log("Inserted a new survey with id", results.insertId);
       res.end();
     }
   );
